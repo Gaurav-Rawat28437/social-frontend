@@ -244,7 +244,7 @@ const CompleteProfile = () => {
                     dispatch(addUserData(res.data.data))
                     nav("/home")
                 } catch (error) {
-
+                    console.log(error)
 
                 }
 

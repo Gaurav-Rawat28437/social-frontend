@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Outlet, useNavigate } from 'react-router-dom'
+import { Navigate, Outlet, useNavigate } from 'react-router-dom'
 import { addUserData } from '../Utils/UserSlice'
 
 const ProtectedRoute = () => {
@@ -34,6 +34,7 @@ const ProtectedRoute = () => {
     //         nav("/complete-profile")
     //     }
     // }, [userData])
+    
 
   if(!userData.username)
   {
@@ -42,7 +43,7 @@ const ProtectedRoute = () => {
   
   if(!userData.isCompletedProfile)
   {
-    nav("/complete-profile")
+    return <Navigate to="/complete-profile" replace />;
   }
 
   return <Outlet />

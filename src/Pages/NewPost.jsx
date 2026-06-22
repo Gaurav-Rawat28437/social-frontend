@@ -1,7 +1,19 @@
+import { useEffect } from "react";
 import Navbar from "../Components/Navbar";
 import Sidebar from "../Components/Sidebar";
 
 const NewPost = () => {
+
+  const [caption, setCaption] = useState("");
+  const [postImg, setPostImg] = useState(null);
+  const [previewUrl, setPreviewUrl] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  
+ function createPost(){
+
+ }
+
   return (
     <div className="h-screen flex flex-col bg-gray-100">
       <Navbar />
@@ -63,7 +75,11 @@ const NewPost = () => {
                   Cancel
                 </button>
 
-                <button className="px-6 py-2.5 bg-indigo-600 text-white rounded-xl hover:bg-indigo-700 transition">
+                <button
+                  onClick={()=>{
+                    createPost()
+                  }}
+                 className="px-6 py-2.5 bg-indigo-600 text-white rounded-xl hover:bg-indigo-700 transition">
                   Create Post
                 </button>
               </div>
